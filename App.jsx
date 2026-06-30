@@ -21,13 +21,14 @@ import {
 // FIREBASE CONFIG
 // Dán config dự án Firebase của bạn vào đây (Project settings > General > Your apps)
 // ============================================================================
+
 const firebaseConfig = {
-  apiKey: "YOUR_FIREBASE_API_KEY",
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID",
+  "apiKey": "AIzaSyCYmWWdxzs6U0Q-N9Eqa-fM6fEP9DYiGwY",
+  "authDomain": "haichai-script-studio.firebaseapp.com",
+  "projectId": "haichai-script-studio",
+  "storageBucket": "haichai-script-studio.firebasestorage.app",
+  "messagingSenderId": "409195333074",
+  "appId": "1:409195333074:web:05b167ddd5da157899b40b"
 };
 
 const ALLOWED_DOMAINS = ['haichai.vn', 'starspits.vn'];
