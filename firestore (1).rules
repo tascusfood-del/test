@@ -1,0 +1,24 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null && request.auth.token.email_verified == true;
+    }
+
+    function allowedCompanyEmail() {
+      return signedIn()
+        && request.auth.token.email.matches('^.+@(haichai\\.vn|starspits\\.vn)$');
+    }
+
+    // Dữ liệu dùng chung cho team Haichai Script Studio.
+    match /workspaces/haichai-script-studio {
+      allow read, write: if allowedCompanyEmail();
+    }
+
+    // Chặn toàn bộ đường dẫn khác.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
